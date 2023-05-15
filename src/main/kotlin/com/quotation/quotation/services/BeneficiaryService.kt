@@ -23,7 +23,7 @@ class BeneficiaryService (val beneficiaryRepository: BeneficiaryRepository) {
     @PostMapping("createbeneficiary")
     @ApiOperation(value="Create New Beneficiary",notes="Create New Beneficiary")
     fun createBeneficiary(@RequestBody newBen:Beneficiary):ResponseEntity<Beneficiary>{
-        val newBen=Beneficiary(null,newBen.firstname,newBen.surname,newBen.dob,newBen.relationship)
+        val newBen=Beneficiary(null,newBen.firstname,newBen.surname,newBen.parentid,newBen.dob,newBen.relationship)
         val createdBen=beneficiaryRepository.save(newBen)
         return ResponseEntity.ok(createdBen)
     }
