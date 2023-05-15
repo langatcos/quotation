@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 
 @Table("beneficiary")
-class Beneficiary (
+data class Beneficiary (
         @Id  @GeneratedValue(strategy = GenerationType.AUTO)
         val id:Int?,
         val firstname:String?,
