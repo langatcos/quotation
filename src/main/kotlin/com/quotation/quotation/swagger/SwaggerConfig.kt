@@ -17,7 +17,7 @@ class SwaggerConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.quotation.quotation.swagger"))
+                .apis(RequestHandlerSelectors.basePackage("com.quotation.quotation"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
