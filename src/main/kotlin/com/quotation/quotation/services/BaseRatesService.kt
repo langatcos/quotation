@@ -18,7 +18,7 @@ class BaseRatesService (val baseRatesRepository: BaseRatesRepository){
         return baseRatesRepository.getAllBaserates()
     }
     @CrossOrigin
-    @GetMapping("getBaseratesByBenefiID/{benefitID}")
+    @GetMapping("getBaseratesByBenefiID/{benefitid}")
     @ApiOperation(value="Get All Base Rates By Benefit ID", notes = "Get All Base Rates By Benefit ID")
     fun getRatesByID(@PathVariable benefitid:Int):ResponseEntity<List<BaseRates>>{
         val rates=baseRatesRepository.getBaseRatesByBenefitid(benefitid)
