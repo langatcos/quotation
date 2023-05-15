@@ -6,11 +6,11 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 
 @Table("baserates")
-class BaseRates (
+data class BaseRates (
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val id:Int?,
-        val desctription:String,
+        val id:Int? = null,
+        val description:String,
         val benefitid:Int,
         val productid:Int,
         val agefrom:Int,

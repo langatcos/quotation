@@ -2,10 +2,12 @@ package com.quotation.quotation.repositories
 
 import com.quotation.quotation.dataclasses.BaseRates
 import org.springframework.data.jdbc.repository.query.Query
-import org.springframework.data.repository.kotlin.CoroutineCrudRepository
+import org.springframework.data.repository.CrudRepository
 
-interface BaseRatesRepository:CoroutineCrudRepository<BaseRates,String> {
+
+interface BaseRatesRepository:CrudRepository<BaseRates,String> {
     @Query("select * from baserates")
     fun getAllBaserates():List<BaseRates>
+    fun getBaseRatesByBenefitid(benefitid:Int):List<BaseRates>
 
 }
