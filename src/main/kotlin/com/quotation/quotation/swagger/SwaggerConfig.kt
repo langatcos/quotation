@@ -17,15 +17,15 @@ class SwaggerConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.wellhealth.healthy"))
+                .apis(RequestHandlerSelectors.basePackage("com.quotation.quotation.swagger"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
     }
     private fun apiInfo(): ApiInfo {
         return ApiInfoBuilder()
-                .title("Well Health Microservices")
-                .description("WellHealth Microservices- Data required by WellHealth App")
+                .title("Quotation Health Microservices")
+                .description("Quotation Microservices- Data required by Quotation App")
                 .version("1.0")
                 .build()
     }
