@@ -6,8 +6,9 @@ import org.springframework.data.repository.CrudRepository
 
 
 interface BaseRatesRepository:CrudRepository<BaseRates,String> {
-    @Query("select * from baserates")
+    @Query("select * from baseratesder order by description,agefrom asc")
     fun getAllBaserates():List<BaseRates>
     fun getBaseRatesByBenefitid(benefitid:Int):List<BaseRates>
+    fun getBaseRatesByProductid(productid:Int):List<BaseRates>
 
 }

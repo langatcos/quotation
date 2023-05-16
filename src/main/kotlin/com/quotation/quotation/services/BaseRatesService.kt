@@ -29,4 +29,16 @@ class BaseRatesService (val baseRatesRepository: BaseRatesRepository){
             ResponseEntity.notFound().build()
         }
     }
+    @CrossOrigin
+    @GetMapping("getBaseratesByProductId/{productid}")
+    @ApiOperation(value="Get All Base Rates By Product ID", notes = "Get All Base Rates By Product ID")
+    fun getRatesByProductID(@PathVariable productid:Int):ResponseEntity<List<BaseRates>>{
+        val rates=baseRatesRepository.getBaseRatesByProductid(productid)
+        return if (rates !=null){
+            ResponseEntity.ok(rates)
+        }
+        else{
+            ResponseEntity.notFound().build()
+        }
+    }
 }
