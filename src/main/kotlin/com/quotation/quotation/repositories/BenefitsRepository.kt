@@ -8,6 +8,7 @@ interface BenefitsRepository:CrudRepository<Benefits,String> {
     @Query("select * from benefits")
     fun getAllBenefits():List<Benefits>
     fun getAllBenefitsByProductid(productid:Int):List<Benefits>
+    fun getAllBenefitsByCategory(category:String):List<Benefits>
 
 
 }

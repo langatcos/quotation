@@ -2,6 +2,7 @@ package com.quotation.quotation.services
 
 import com.quotation.quotation.dataclasses.Benefits
 import com.quotation.quotation.repositories.BenefitsRepository
+import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
@@ -21,5 +22,18 @@ class BenefitsService (val benefitsRepository: BenefitsRepository){
         }else{
             ResponseEntity.notFound().build()
         }
+    }
+    @CrossOrigin
+    @GetMapping("getallProductsByCategory/{category}")
+    @ApiOperation(value = "Get All Benefits By Category Name", notes="Get All Benefits By Category Name")
+    fun getAllByCategory(@PathVariable category:String):ResponseEntity<List<Benefits>>{
+        val ben=benefitsRepository.getAllBenefitsByCategory(category)
+        return if (ben !=null){
+            ResponseEntity.ok(ben)
+        }else{
+            ResponseEntity.notFound().build()
+
+        }
+
     }
 }

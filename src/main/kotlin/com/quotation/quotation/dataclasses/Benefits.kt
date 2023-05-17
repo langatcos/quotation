@@ -6,5 +6,6 @@ import org.springframework.data.relational.core.mapping.Table
 data class Benefits (
         val Benefitid:Int,
         val description:String,
-        val productid:Int
+        val productid:Int,
+        val category: String
 )
