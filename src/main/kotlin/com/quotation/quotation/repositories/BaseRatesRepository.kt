@@ -10,5 +10,4 @@ interface BaseRatesRepository:CrudRepository<BaseRates,String> {
     fun getAllBaserates():List<BaseRates>
     fun getBaseRatesByBenefitid(benefitid:Int):List<BaseRates>
     fun getBaseRatesByProductid(productid:Int):List<BaseRates>
-
 }
