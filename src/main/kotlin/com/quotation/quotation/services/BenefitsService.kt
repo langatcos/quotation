@@ -32,7 +32,6 @@ class BenefitsService (val benefitsRepository: BenefitsRepository){
             ResponseEntity.ok(ben)
         }else{
             ResponseEntity.notFound().build()
-
         }
 
     }
