@@ -15,6 +15,6 @@ data class Beneficiary (
         val parentid:Int?,
         val dob:String?,
         val relationship:String?,
-        val title:String,
-        val gender:String
+        val title:String?,
+        val gender:String?
 )
