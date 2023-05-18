@@ -7,5 +7,6 @@ data class Benefits (
         val Benefitid:Int,
         val description:String,
         val productid:Int,
-        val category: String
+        val category: String,
+        val distribution:String
 )
